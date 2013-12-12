@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                          ////////////////////////////////
                          mochacli: {
                              options: {
-                                 require: ['assert', 'expect.js'],
+                                 require: ['assert'],
                                  reporter: 'nyan',
                                  bail: true,
                                  recursive: true,
