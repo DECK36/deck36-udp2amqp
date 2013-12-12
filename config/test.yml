@@ -1,0 +1,8 @@
+server:
+  connector: fileconnector
+connectors:{
+  file: {
+    filename: '/tmp/rsysqp-test.log',
+    flags: 'a'
+  }
+}

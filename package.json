@@ -1,0 +1,49 @@
+{
+  "name": "deck36-udp2amqp",
+  "title": "deck36-udp2amqp",
+  "company": "DECK36 GmbH & Co. KG",
+  "version": "0.0.1",
+  "author": {
+    "name": "deck36",
+    "email": "support@deck36.de",
+    "homepage": "http://deck36.de"
+  },
+  "description": "deck36-udp2amqp is a backend for receiving messages on UDP and writing them into an amqp exchange.",
+  "main": "",
+  "dependencies": {
+    "config": "0.4.x",
+    "yaml": "0.2.x",
+    "amqp": "0.1.x",
+    "pm2": "~0.6.5",
+    "async": "~0.2.9"
+  },
+  "devDependencies": {
+    "cucumber": "latest",
+    "grunt": "0.4.x",
+    "grunt-exec": "0.4.x",
+    "grunt-concurrent": "0.4.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-cucumber": "0.2.x",
+    "grunt-nodemon": "0.1.x",
+    "mocha": "1.13.x",
+    "grunt-mocha-cli": "1.2.x"
+  },
+  "keywords": [
+    "deck36",
+    "logging",
+    "syslog",
+    "js",
+    "json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DECK36/deck36-udp2amqp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DECK36/deck36-udp2amqp/issues",
+    "email": "support@deck36.de"
+  },
+  "license" : {
+      "url" : "https://github.com/DECK36/deck36-udp2amqp/issues"
+   }
+}

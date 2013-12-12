@@ -1,0 +1,14 @@
+*.swp
+.Trash-1000
+.buildpath
+.idea
+.project
+.settings
+.DS_Store
+._.DS_Store
+.sass-cache
+node_modules/
+npm-debug.log
+config/runtime.json
+config/dev.yml
+config/prod.yml

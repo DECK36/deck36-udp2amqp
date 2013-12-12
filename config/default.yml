@@ -1,0 +1,37 @@
+server:
+  host: localhost
+  port: 6660 # for udp4 / 6
+  options: {
+    type: 'udp4' #can be udp4, udp6 or unix_dgram (unsupported out of the box since node 0.6)
+  }
+  connector: amqpconnector
+fs:
+  failoverfile: '/tmp/rsysqp_failover.log'
+connectors:{
+  amqp: {
+    host: '127.0.0.1',
+    port: 5672,
+    login: 'guest',
+    password: 'guest',
+    authMechanism: 'AMQPLAIN',
+    reconnect: false,
+    vhost: '/',
+    exchanges: {
+      rsyslog: {
+        name: 'rsyslog-messages',
+        options: {
+          durable: true
+        },
+        routingKey: '',
+        publishoptions: {
+          #contentEncoding: gzip
+        }
+      }
+    }
+  },
+  file: {
+    filename: '/tmp/rsysqp-msg.log',
+    flags: 'w+',
+    mode: '0755'
+  }
+}
