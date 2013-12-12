@@ -13,12 +13,12 @@ deck36-udp2amqp
 
 ## Introduction
 
-The [deck36-udp2amqp][1] is a server which can take messages from a rsyslog daemon and push them into an amqp
+The [deck36-udp2amqp][1] is a server which can take messages from a syslog daemon and push them into an amqp
 based exchange as served by rabbitmq.
 
 ##Goals
 
-We needed a tool to receiving syslog messages an trasport them into an exchange (RabbitMQ).
+We needed a tool to receiving syslog messages an transport them into an exchange (RabbitMQ).
 The tool should be scaleable (1000+ msg/s) and easy to install / operate.
 Syslog should be able to send data to the tool.
 
@@ -43,7 +43,7 @@ Nevertheless, this tool, can be extended by providing TCP sockets, too.
 ## Installation
 
 1. Make sure you have [nodejs][2] installed.
-2. Ensure [npm][3]is installed, too.
+2. Ensure [npm][3] is installed, too.
 3. Checkout these sources.
 4. execute npm install
 5. sudo npm -i -g [grunt-cli][4]
@@ -51,73 +51,62 @@ Nevertheless, this tool, can be extended by providing TCP sockets, too.
 
 or
 
-./bin/install.sh
+`./bin/install.sh`
 
 ## Development
 
-Install dev dependencies with npm -i install --dev.
+Install dev dependencies with `npm -i install --dev`.
 
 or
 
-./bin/install_dev.sh
+`./bin/install_dev.sh`
 
 1. Run grunt start-server-dev
-
 With this command you will start a file watching process which executes mocha unittests as soon as some file has been
 changed.
 
 2. Configure the rsylog daemon to push messages into the provided udp socket.
-
 You can use the provided example to test it by just copying the example to your /etc/rsyslog.d/ directory in a linux
 system like debian. If not existing, you have to install [syslog][5] first.
 
 3. To test instantly you can use [socat][7] or just the bash-ism shell (maybe not on other shells)
-<pwd>
-socat STDIO UDP4-DATAGRAM:localhost:6660
+
+`socat STDIO UDP4-DATAGRAM:localhost:6660`
 
 or
 
-cat - > /dev/udp/localhost/6660
-</pwd>
+`cat - > /dev/udp/localhost/6660`
 
 And then just send some input to the socket.
 
 4. Connectors
-
 You find 2 connectors shipped. The amqpconnector and the fileconnector. If you need others,
 you can easily add them (and contribute :)).
 
 ## Testing
 In case of testing, the fileconnector is used.
 
-1. Run grunt test
-
+1. Run `grunt test`
 Just runs the tests.
 
 ## Production
 
-1. Start clustered and recover on fail mode
-<pwd>
-NODE_ENV=prod pm2 start syslogtoamqp.js -i max
-</pwd>
+1. Start clustered and recover on failure
+
+`NODE_ENV=prod pm2 start syslogtoamqp.js -i max`
 
 You can then have a look at [pm2][6].
 
 # FAQ
-
 1. I experience some "RangeError: Maximum call stack size exceeded" error.
-
 This might be caused of some issues regarding the exchange. Have a look at your rabbitMQ error logs.
 
 2. I use logger to send JSON strings, and they are not received correctly. Only if I add ' the message is correct.
-
 Problem is with logger, which then recieves bash 'optimized' input. So please use socat to test or add ' to the message
 sent.
 
 # Bugs / Features
-
 Please use https://github.com/DECK36/deck36-udp2amqp/issues to add feature requests and bugs.
 
 # Contribute
-
 Feel free to send PullRequests. We promise to review them fast.
