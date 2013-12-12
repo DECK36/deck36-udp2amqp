@@ -18,7 +18,7 @@ based exchange as served by rabbitmq.
 
 ##Goals
 
-We needed a tool to receiving syslog messages an trasport them into an exchange (RabbitMQ).
+We needed a tool to receiving syslog messages an transport them into an exchange (RabbitMQ).
 The tool should be scaleable (1000+ msg/s) and easy to install / operate.
 Syslog should be able to send data to the tool.
 
