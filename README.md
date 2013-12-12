@@ -13,7 +13,7 @@ deck36-udp2amqp
 
 ## Introduction
 
-The [deck36-udp2amqp][1] is a server which can take messages from a rsyslog daemon and push them into an amqp
+The [deck36-udp2amqp][1] is a server which can take messages from a syslog daemon and push them into an amqp
 based exchange as served by rabbitmq.
 
 ##Goals
