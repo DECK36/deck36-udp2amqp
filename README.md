@@ -86,7 +86,7 @@ you can easily add them (and contribute :)).
 ## Testing
 In case of testing, the fileconnector is used.
 
-1. Run grunt test
+1. Run `grunt test`
 Just runs the tests.
 
 ## Production
